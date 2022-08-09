@@ -1,0 +1,446 @@
+/* Font import inter*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;800;900&display=swap');
+/* Font import poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --primary: #4F46E5;
+  --primary-dark: #423ac9;
+  --secondary: #FACC15;
+  --black-1: #0F172A;
+  --gray-1: #8C919A;
+  --gray-2: #D1D5DB;
+  --white: #FFFFFF;
+  --container: #FCFCFF;
+  --light-primary: #DFDEF0;
+}
+
+body,
+html {
+  background-color: var(--container);
+}
+
+h1.text-md-title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 54px;
+  color: var(--black-1);
+}
+
+h1.text-md-title-page {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+}
+
+p.text-md-desc {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 36px;
+  color: var(--black-1);
+}
+
+p.text-md-desc-page {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--gray-1);
+}
+
+.card {
+  border: none;
+}
+
+.dropdown-menu {
+  border: none;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+
+/* -------------------------------------------------------- */
+/* Navbar
+/* -------------------------------------------------------- */
+.navbar {
+  font-family: 'Inter';
+  font-size: 16px;
+  box-shadow: 0px 4px 33px rgba(0, 0, 0, 0.06);
+  font-weight: 400;
+  line-height: 19.36px;
+}
+
+a.nav-link {
+  margin-left: 50px;
+  color: var(--black-1);
+}
+
+a.nav-link.active {
+  color: var(--primary) !important;
+}
+
+/* -------------------------------------------------------- */
+/* Button
+/* -------------------------------------------------------- */
+.btn-primary {
+  background-color: var(--primary);
+}
+
+.btn {
+  padding: 11px 36px !important;
+  border: none;
+}
+
+.btn.btn-primary:hover {
+  background-color: var(--primary-dark);
+}
+
+.btn.btn-primary:focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(17, 13, 253, 0.25);
+  background-color: var(--primary-dark);
+}
+
+/* -------------------------------------------------------- */
+/* Form custom
+/* -------------------------------------------------------- */
+label {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border: 1px solid var(--primary) !important;
+  box-shadow: none !important;
+  color: var(--primary) !important;
+}
+
+.form-group {
+  margin: 24px 0;
+}
+
+.invalid-feedback-form {
+  color: red;
+  font-size: 12px;
+}
+
+/* -------------------------------------------------------- */
+/* Hero section
+/* -------------------------------------------------------- */
+
+section.hero {
+  padding: 165px 0;
+}
+
+section.hero .text {
+  padding: 100px 0;
+  vertical-align: middle;
+}
+
+section.hero .text h1 {
+  font-size: 45px;
+  color: var(--black-1);
+  font-weight: 700;
+  line-height: 143%;
+  font-family: 'Poppins';
+}
+
+section.hero .text p {
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 30px;
+  color: var(--black-1);
+  max-width: 345px;
+}
+
+/* -------------------------------------------------------- */
+/* What section
+/* -------------------------------------------------------- */
+
+section.what {
+  padding: 155px 0;
+}
+
+/* -------------------------------------------------------- */
+/* Terms section
+/* -------------------------------------------------------- */
+
+section.terms {
+  padding: 155px 0;
+}
+
+section.terms .card {
+  text-align: center;
+  border-radius: 11px;
+  padding: 3rem 0;
+}
+
+section.terms .card p {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: #675408;
+  min-width: 161px;
+  max-width: 161px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* -------------------------------------------------------- */
+/* Program section
+/* -------------------------------------------------------- */
+
+section.program {
+  padding: 155px 0;
+}
+
+section.program .text {
+  padding-top: 100px;
+}
+
+/* -------------------------------------------------------- */
+/* Whyus section
+/* -------------------------------------------------------- */
+
+section.whyus {
+  padding: 155px 0;
+}
+
+section.whyus p.text-why {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  color: var(--black-1);
+  padding-top: 20px;
+}
+
+
+/* -------------------------------------------------------- */
+/* regards section
+/* -------------------------------------------------------- */
+section.regards {
+  padding: 155px 0;
+}
+
+/* -------------------------------------------------------- */
+/* grow section
+/* -------------------------------------------------------- */
+section.grow {
+  padding: 50px 0;
+}
+
+/* -------------------------------------------------------- */
+/* vision section
+/* -------------------------------------------------------- */
+section.vision {
+  padding: 155px 0;
+}
+
+section.vision h5 {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  color: var(--black-1);
+}
+
+section.vision p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0.06em;
+  color: var(--black-1);
+}
+
+/* -------------------------------------------------------- */
+/* legal section
+/* -------------------------------------------------------- */
+section.legal {
+  padding: 40px 0;
+}
+
+/* -------------------------------------------------------- */
+/* BLog section
+/* -------------------------------------------------------- */
+section.blog {
+  padding: 155px 0;
+}
+
+section.blog .card {
+  background-color: transparent;
+}
+
+.date {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--primary);
+}
+
+section.blog a {
+  text-decoration: none;
+  color: var(--black-1);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+section.blog a:hover {
+  color: var(--primary);
+  transition: 0.5s;
+}
+
+section.blog p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--gray-1);
+}
+
+section.blog img {
+  height: 240px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.content-blog-area {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 29px;
+  color: var(--gray-1);
+}
+
+/* -------------------------------------------------------- */
+/* Announcement section
+/* -------------------------------------------------------- */
+
+/* -------------------------------------------------------- */
+/* Auth section
+/* -------------------------------------------------------- */
+/* -------------------------------------------------------- */
+/* Detail blog section
+/* -------------------------------------------------------- */
+section.detail__blog {
+  padding: 155px 0;
+}
+
+section.detail__blog .thumbnail img {
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+section.auth {
+  padding: 100px 0;
+  background-color: hsl(0, 0%, 96%);
+}
+
+section.auth .card {
+  border-radius: 12px;
+}
+
+section.announcement {
+  padding: 155px 0;
+}
+
+section.announcement .card {
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+}
+
+section.announcement a {
+  text-decoration: none;
+}
+
+section.announcement h6 {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  color: var(--black-1);
+}
+
+section.announcement p {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--gray-1);
+}
+
+/* -------------------------------------------------------- */
+/* Services section
+/* -------------------------------------------------------- */
+
+section.services {
+  padding: 155px 0;
+}
+
+
+section.services .card {
+  padding: 20px;
+  box-shadow: 0px 4px 13px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+}
+
+section.services .card h6 {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 6px 0;
+}
+
+section.services .card p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--gray-1);
+}
+
+/* -------------------------------------------------------- */
+/* Footer section
+/* -------------------------------------------------------- */
+
+footer {
+  background-color: var(--black-1);
+  color: var(--white);
+  padding-top: 100px;
+  padding-bottom: 50px;
+  text-decoration: none;
+  font-family: 'Poppins';
+}
+
+footer .address p {
+  margin: 29px 0;
+  max-width: 253px;
+  font-weight: 300;
+}
+
+footer .h6 {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+
+footer a {
+  color: var(--gray-1);
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 25px;
+}
+
+footer a:hover {
+  color: var(--white);
+}
+
+footer li {
+  margin-bottom: 15px;
+}
+
+footer small {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 25px;
+}
