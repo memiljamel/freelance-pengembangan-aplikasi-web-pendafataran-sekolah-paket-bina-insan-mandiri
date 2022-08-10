@@ -1,62 +1,73 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Setup Laravel Mode Production
+1. Terapkan perubahan pada file .env:
+   * APP_ENV=production
+   * APP_DEBUG=false
+2. Yakinkan bahwa kamu telah optimizing Composer's class autoloader map:
+   * ```
+     composer dump-autoload --optimize
+     ```
+   * atau bersamaan dengan menginstall
+     ```
+     composer install --optimize-autoloader --no-dev
+     ```
+   * atau bersamaan dengan mengupdate
+     ```
+     composer update --optimize-autoloader
+     ```
+3. Mengoptimalkan pemuatan konfigurasi
+   ```
+   php artisan config:cache
+   ```
+4. Mengoptimalkan Pemuatan Rute
+   ```
+   php artisan route:cache
+   ```
+5. Compile semua templat Blade aplikasi
+   ```
+   php artisan view:cache
+   ```
+6. Cache file bootstrap
+   ```
+   php artisan optimize
+   ```
+7. (Opsional) Mengkompilasi aset [(docs)](https://laravel.com/docs/master/mix#running-mix)
+     ```
+     npm run production
+     ```
+8. (Opsional) Buat kunci enkripsi yang dibutuhkan Laravel Passport [(docs)](https://laravel.com/docs/master/passport#deploying-passport)
+     ```
+     php artisan passport:keys
+     ```
+9. (Opsional) Mulai penjadwal tugas Laravel dengan menambahkan entri Cron berikut [(docs)](https://laravel.com/docs/master/scheduling#introduction)
+     ```
+     php artisan passport:keys
+     ```
+10. (Opsional) Install, konfigurasi, dan mulai Supervisor [(docs)](https://laravel.com/docs/master/queues#supervisor-configuration)
+     ```
+     * * * * * cd /path-to-your-project && php artisan schedule:run >> /dev/null 2>&1
+     ```
+12. (Opsional) Buat tautan simbolis dari public/storage ke storage/app/public [(docs)](https://laravel.com/docs/master/filesystem#the-public-disk)
+     ```
+     php artisan storage:link
+     ```
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+Sumber: [https://stackoverflow.com/questions/59663762/laravel-what-steps-should-one-take-to-make-a-laravel-app-ready-for-production](https://stackoverflow.com/questions/59663762/laravel-what-steps-should-one-take-to-make-a-laravel-app-ready-for-production)
 
-## About Laravel
+# Cara Hosting
+1. Upload file project tahap production ke folder public_html.
+2. Jika file .env tidak ditemukan, klik tombol settings yang berada kiri atas. Kemudian centang Show Hidden Files (dotfiles) dan klik Save.
+3. Buat file baru di root project (public_html) dengan nama .htaccess.
+4. Kemudian isikan file tersebut dengan kode berikut
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+```
+<IfModule mod_rewrite.c> 
+    RewriteEngine On 
+    
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+    RewriteCond %{REQUEST_URI} !^public/
+    RewriteRule ^(.*)$ public/$1 [L] #relative substitution
+</IfModule>
+```
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-"# freelance-pkbm-app" 
+5. Coba akses domain hosting, besar kemungkinan aplikasi web kamu telah bekerja.
