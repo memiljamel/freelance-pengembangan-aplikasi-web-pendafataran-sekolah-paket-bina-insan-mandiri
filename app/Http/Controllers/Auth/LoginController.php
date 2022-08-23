@@ -27,7 +27,7 @@ class LoginController extends Controller
      */
     public function authenticate(LoginRequest $request)
     {
-        if (Auth::attempt($request->only(['email', 'password']), $request->input('remember'))) {
+        if (Auth::attempt($request->only(['phone_number', 'password']), $request->input('remember'))) {
             $request->session()->regenerate();
 
             if (Auth::user()->role === 'admin') {
@@ -38,6 +38,6 @@ class LoginController extends Controller
         }
         
         return back()->withInput()
-            ->withErrors(['email' => 'The provided credentials do not match our records.']);
+            ->withErrors(['phone_number' => 'The provided credentials do not match our records.']);
     }
 }

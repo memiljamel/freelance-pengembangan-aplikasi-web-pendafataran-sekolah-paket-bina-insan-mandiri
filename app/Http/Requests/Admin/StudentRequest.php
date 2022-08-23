@@ -25,6 +25,7 @@ class StudentRequest extends FormRequest
     {
         return [
             'status' => 'required|in:Diproses,Diterima,Ditolak',
+            'notes' => 'nullable|string|min:8',
         ];
     }
 }

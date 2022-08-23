@@ -31,6 +31,7 @@ use Illuminate\Support\Facades\Route;
 Route::view('/', 'guest.welcome')->name('welcome');
 Route::view('/about', 'guest.about')->name('about');
 Route::view('/service', 'guest.service')->name('service');
+Route::view('/information', 'guest.information')->name('information');
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
 Route::post('/contact/sendmail', [ContactController::class, 'sendmail'])->name('contact.sendmail');

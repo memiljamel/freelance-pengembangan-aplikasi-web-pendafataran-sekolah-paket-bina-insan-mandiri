@@ -36,18 +36,9 @@
               @enderror
             </div>
             <div class="form-group">
-              <label class="form-label" for="avatar">{{ __('Pas Foto (Max: 2 MB)') }}</label>
-              <input type="file" class="form-control @error('avatar') is-invalid @enderror" name="avatar" id="avatar" required />
-              @error('avatar')
-                <div class="text-danger mt-2">
-                  {{ $message }}
-                </div>
-              @enderror
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="email">{{ __('Email') }}</label>
-              <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" id="email" value="{{ old('email') }}" required />
-              @error('email')
+              <label class="form-label" for="phone_number">{{ __('Nomor Ponsel') }}</label>
+              <input type="number" class="form-control @error('phone_number') is-invalid @enderror" name="phone_number" id="phone_number" value="{{ old('phone_number') }}" required />
+              @error('phone_number')
                 <div class="text-danger mt-2">
                   {{ $message }}
                 </div>
@@ -261,13 +252,6 @@
                 <option value="Paket A" @if (old('education_category') === 'Paket A') selected @endif>{{ __('Paket A') }}</option>
                 <option value="Paket B" @if (old('education_category') === 'Paket B') selected @endif>{{ __('Paket B') }}</option>
                 <option value="Paket C" @if (old('education_category') === 'Paket C') selected @endif>{{ __('Paket C') }}</option>
-                <option value="Paket KD" @if (old('education_category') === 'Paket KD') selected @endif>{{ __('Paket KD') }}</option>
-                <option value="Paket KUM" @if (old('education_category') === 'Paket KUM') selected @endif>{{ __('Paket KUM') }}</option>
-                <option value="Paket TBM" @if (old('education_category') === 'Paket TBM') selected @endif>{{ __('Paket TBM') }}</option>
-                <option value="Paket Khursus Komputer" @if (old('education_category') === 'Paket Khursus Komputer') selected @endif>{{ __('Paket Khursus Komputer') }}</option>
-                <option value="Paket Koperasi" @if (old('education_category') === 'Paket Koperasi') selected @endif>{{ __('Paket Koperasi') }}</option>
-                <option value="Paket PAUD" @if (old('education_category') === 'Paket PAUD') selected @endif>{{ __('Paket PAUD') }}</option>
-                <option value="Paket DTA" @if (old('education_category') === 'Paket DTA') selected @endif>{{ __('Paket DTA') }}</option>
               </select>
               @error('education_category')
                 <div class="text-danger mt-2">
@@ -308,6 +292,15 @@
               <label class="form-label" for="family_card">{{ __('Fotocopy KK (Max: 2 MB)') }}</label>
               <input type="file" class="form-control @error('family_card') is-invalid @enderror" name="family_card" id="family_card" required />
               @error('family_card')
+                <div class="text-danger mt-2">
+                  {{ $message }}
+                </div>
+              @enderror
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="avatar">{{ __('Pas Foto (Max: 2 MB, Berwarna Merah)') }}</label>
+              <input type="file" class="form-control @error('avatar') is-invalid @enderror" name="avatar" id="avatar" required />
+              @error('avatar')
                 <div class="text-danger mt-2">
                   {{ $message }}
                 </div>

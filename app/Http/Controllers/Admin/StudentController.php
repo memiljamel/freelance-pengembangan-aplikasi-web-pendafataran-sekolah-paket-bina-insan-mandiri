@@ -58,6 +58,7 @@ class StudentController extends Controller
     {
         $personal = Personal::find($personal->id);
         $personal->status = $request->input('status');
+        $personal->notes = $request->input('notes');
         $personal->save();
 
         return back()->with('status', 'Data calon siswa berhasil diperbarui.');

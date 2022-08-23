@@ -29,7 +29,7 @@ class RegisterController extends Controller
     public function store(RegisterRequest $request) 
     {
         $user = new User();
-        $user->email = $request->input('email');
+        $user->phone_number = $request->input('phone_number');
         $user->password = $request->input('password');
         $user->save();
 

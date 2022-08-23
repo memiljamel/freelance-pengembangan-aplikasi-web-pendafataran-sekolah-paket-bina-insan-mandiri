@@ -38,69 +38,6 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card mb-4">
-            <div class="card-body">
-              <img src="{{ asset('img/icons/icon-services.svg') }}" alt="services-icons">
-              <h6>{{ __('Paket KD') }}</h6>
-              <p>{{ __('Layanan paket KD') }}</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card mb-4">
-            <div class="card-body">
-              <img src="{{ asset('img/icons/icon-services.svg') }}" alt="services-icons">
-              <h6>{{ __('Paket KUM') }}</h6>
-              <p>{{ __('Layanan paket KUM') }}</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card mb-4">
-            <div class="card-body">
-              <img src="{{ asset('img/icons/icon-services.svg') }}" alt="services-icons">
-              <h6>{{ __('Paket TBM') }}</h6>
-              <p>{{ __('Layanan paket TBM') }}</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card mb-4">
-            <div class="card-body">
-              <img src="{{ asset('img/icons/icon-services.svg') }}" alt="services-icons">
-              <h6>{{ __('Paket Khursus Komputer') }}</h6>
-              <p>{{ __('Layanan khursus komputer') }}</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card mb-4">
-            <div class="card-body">
-              <img src="{{ asset('img/icons/icon-services.svg') }}" alt="services-icons">
-              <h6>{{ __('Paket Koperasi') }}</h6>
-              <p>{{ __('Layanan paket Koperasi') }}</p>
-            </div>
-        </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card mb-4">
-            <div class="card-body">
-              <img src="{{ asset('img/icons/icon-services.svg') }}" alt="services-icons">
-              <h6>{{ __('Paket PAUD') }}</h6>
-              <p>{{ __('Layanan paket PAUD') }}</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card mb-4">
-            <div class="card-body">
-              <img src="{{ asset('img/icons/icon-services.svg') }}" alt="services-icons">
-              <h6>{{ __('Paket DTA') }}</h6>
-              <p>{{ __('Layanan paket DTA') }}</p>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>

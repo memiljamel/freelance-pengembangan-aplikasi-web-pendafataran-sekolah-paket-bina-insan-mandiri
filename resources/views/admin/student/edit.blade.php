@@ -139,6 +139,16 @@
                   </div>
                 @enderror
               </div>
+              <div class="form-group">
+                <label class="form-label" for="notes">{{ __('Catatan') }}</label>
+                <textarea class="form-control @error('notes') is-invalid @enderror" name="notes" id="notes" rows="3" required>{{ $user->personal->notes }}</textarea>
+                @error('notes')
+                  <div class="text-danger mt-2">
+                    {{ $message }}
+                  </div>
+                @enderror  
+              </div>
+
             </div>
           </div>
           <hr class="d-none d-md-block">

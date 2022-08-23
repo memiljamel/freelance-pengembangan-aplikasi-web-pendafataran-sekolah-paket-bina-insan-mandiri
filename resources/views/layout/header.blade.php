@@ -13,6 +13,7 @@
         <a class="nav-item nav-link @if (request()->routeIs('welcome')) active @endif" href="{{ route('welcome') }}" aria-current="page">{{ __('Beranda') }}</a>
         <a class="nav-item nav-link @if (request()->routeIs('about')) active @endif" href="{{ route('about') }}">{{ __('Profil') }}</a>
         <a class="nav-item nav-link @if (request()->routeIs('service')) active @endif" href="{{ route('service') }}">{{ __('Layanan') }}</a>
+        <a class="nav-item nav-link @if (request()->routeIs('information')) active @endif" href="{{ route('information') }}">{{ __('Informasi') }}</a>
         <a class="nav-item nav-link @if (request()->routeIs('contact')) active @endif" href="{{ route('contact.index') }}">{{ __('Kontak') }}</a>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ __('Kegiatan') }}</a>

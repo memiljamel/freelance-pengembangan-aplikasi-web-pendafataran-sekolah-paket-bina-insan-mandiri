@@ -61,8 +61,8 @@
                 @enderror
               </div>
               <div class="form-group">
-                <label class="form-label" for="email">{{ __('Email') }}</label>
-                <input type="email" class="form-control" name="email" id="email" value="{{ $user->email }}" disabled />
+                <label class="form-label" for="phone_number">{{ __('Nomor Ponsel') }}</label>
+                <input type="number" class="form-control" name="phone_number" id="phone_number" value="{{ $user->phone_number }}" disabled />
               </div>
               <div class="form-group">
                 <label class="form-label" for="password">{{ __('Kata Sandi') }}</label>

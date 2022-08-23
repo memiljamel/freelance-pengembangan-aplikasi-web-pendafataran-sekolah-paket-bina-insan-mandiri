@@ -27,7 +27,7 @@ class RegisterRequest extends FormRequest
             'fullname' => 'required|string|min:3|max:70',
             'nickname' => 'required|string|min:3|max:70',
             'avatar' => 'required|image|max:2048|mimes:png,jpg,jpeg',
-            'email' => 'required|email|unique:users,email',
+            'phone_number' => 'required|numeric|digits_between:11,13|unique:users,phone_number',
             'password' => 'required|string|min:8|max:50',
             'gender' => 'required|in:Laki-laki,Perempuan',
             'place_of_birth' => 'required|string|max:50',

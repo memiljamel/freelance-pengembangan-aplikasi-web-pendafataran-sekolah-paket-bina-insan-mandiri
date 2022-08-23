@@ -25,14 +25,18 @@
             </div>
             <div class="card-body text-center">
               @if ($user->personal->status === 'Diproses')
-                <div class="alert alert-warning" role="alert">Harap bersabar! Proses pendaftaran membutuhkan waktu.</div>
+                <div class="alert alert-warning" role="alert">{{ __('Harap bersabar! Proses pendaftaran Anda sedang diproses.') }}</div>
               @elseif ($user->personal->status === 'Diterima')
-                <div class="alert alert-success" role="alert">Selamat! Proses pendaftaran Anda diterima.</div>
+                <div class="alert alert-success" role="alert">
+                  {{ $user->personal->notes ?: __('Selamat! Proses pendaftaran Anda diterima.') }}
+                </div>
                 <a class="btn btn-primary js-download-link button" href="{{ route('admin.export.pdf', $user->personal->id) }}">
                   {{ __('Unduh Bukti Pendaftaran') }}
                 </a>
               @else
-                <div class="alert alert-danger" role="alert">Maaf! Proses pendaftaran Anda ditolak.</div>
+                <div class="alert alert-danger" role="alert">
+                  {{ $user->personal->notes ?: __('Maaf! Proses pendaftaran Anda ditolak.') }}
+                </div>
               @endif
             </div>
           </div>
@@ -87,8 +91,8 @@
                 @enderror
               </div>
               <div class="form-group">
-                <label class="form-label" for="email">{{ __('Email') }}</label>
-                <input type="email" class="form-control" name="email" id="email" value="{{ $user->email }}" disabled />
+                <label class="form-label" for="phone_number">{{ __('Nomor Ponsel') }}</label>
+                <input type="number" class="form-control" name="phone_number" id="phone_number" value="{{ $user->phone_number }}" disabled />
               </div>
               <div class="form-group">
                 <label class="form-label" for="password">{{ __('Kata Sandi') }}</label>
@@ -300,13 +304,6 @@
                   <option value="Paket A" @if ($user->personal->education_category === 'Paket A') selected @endif>{{ __('Paket A') }}</option>
                   <option value="Paket B" @if ($user->personal->education_category === 'Paket B') selected @endif>{{ __('Paket B') }}</option>
                   <option value="Paket C" @if ($user->personal->education_category === 'Paket C') selected @endif>{{ __('Paket C') }}</option>
-                  <option value="Paket KD" @if ($user->personal->education_category === 'Paket KD') selected @endif>{{ __('Paket KD') }}</option>
-                  <option value="Paket KUM" @if ($user->personal->education_category === 'Paket KUM') selected @endif>{{ __('Paket KUM') }}</option>
-                  <option value="Paket TBM" @if ($user->personal->education_category === 'Paket TBM') selected @endif>{{ __('Paket TBM') }}</option>
-                  <option value="Paket Khursus Komputer" @if ($user->personal->education_category === 'Paket Khursus Komputer') selected @endif>{{ __('Paket Khursus Komputer') }}</option>
-                  <option value="Paket Koperasi" @if ($user->personal->education_category === 'Paket Koperasi') selected @endif>{{ __('Paket Koperasi') }}</option>
-                  <option value="Paket PAUD" @if ($user->personal->education_category === 'Paket PAUD') selected @endif>{{ __('Paket PAUD') }}</option>
-                  <option value="Paket DTA" @if ($user->personal->education_category === 'Paket DTA') selected @endif>{{ __('Paket DTA') }}</option>
                 </select>
                 @error('education_category')
                   <div class="text-danger mt-2">

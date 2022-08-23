@@ -42,6 +42,7 @@ class CreatePersonalsTable extends Migration
             $table->text('identity_card');
             $table->text('family_card');
             $table->enum('status', ['Diproses', 'Diterima', 'Ditolak'])->default('Diproses');
+            $table->longText('notes')->nullable();
             $table->timestamps();
         });
     }

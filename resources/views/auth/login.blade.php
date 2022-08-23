@@ -32,9 +32,9 @@
                   @method('POST')
 
                   <div class="form-outline mb-4">
-                    <label class="form-label" for="email">{{ __('Email') }}</label>
-                    <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" id="email" value="{{ old('email') }}" required />
-                    @error('email')
+                    <label class="form-label" for="phone_number">{{ __('Nomor Ponsel') }}</label>
+                    <input type="number" class="form-control @error('phone_number') is-invalid @enderror" name="phone_number" id="phone_number" value="{{ old('phone_number') }}" required />
+                    @error('phone_number')
                       <div class="text-danger mt-2">
                         {{ $message }}
                       </div>
