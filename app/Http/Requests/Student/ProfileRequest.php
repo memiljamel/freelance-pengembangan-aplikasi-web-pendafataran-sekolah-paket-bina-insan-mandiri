@@ -49,6 +49,7 @@ class ProfileRequest extends FormRequest
             'birth_certificate' => 'nullable|image|max:2048|mimes:png,jpg,jpeg',
             'identity_card' => 'nullable|image|max:2048|mimes:png,jpg,jpeg',
             'family_card' => 'nullable|image|max:2048|mimes:png,jpg,jpeg',
+            'school_certificate' => 'nullable|image|max:2048|mimes:png,jpg,jpeg',
         ];
     }
 }

@@ -90,6 +90,10 @@ class ProfileController extends Controller
             Storage::delete($personal->family_card);
             $personal->family_card = Storage::putFile('images', $request->file('family_card'));
         }
+        if ($request->filled('school_certificate')) {
+            Storage::delete($personal->school_certificate);
+            $personal->school_certificate = Storage::putFile('images', $request->file('school_certificate'));
+        }
         $user->personal()->save($personal);
 
         return back()->with('status', 'Data diri berhasil diperbarui.');

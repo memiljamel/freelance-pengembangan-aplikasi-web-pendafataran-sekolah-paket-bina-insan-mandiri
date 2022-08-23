@@ -36,6 +36,15 @@
               @enderror
             </div>
             <div class="form-group">
+              <label class="form-label" for="avatar">{{ __('Pas Foto (Max: 2 MB, Berwarna Merah)') }}</label>
+              <input type="file" class="form-control @error('avatar') is-invalid @enderror" name="avatar" id="avatar" required />
+              @error('avatar')
+                <div class="text-danger mt-2">
+                  {{ $message }}
+                </div>
+              @enderror
+            </div>
+            <div class="form-group">
               <label class="form-label" for="phone_number">{{ __('Nomor Ponsel') }}</label>
               <input type="number" class="form-control @error('phone_number') is-invalid @enderror" name="phone_number" id="phone_number" value="{{ old('phone_number') }}" required />
               @error('phone_number')
@@ -298,9 +307,9 @@
               @enderror
             </div>
             <div class="form-group">
-              <label class="form-label" for="avatar">{{ __('Pas Foto (Max: 2 MB, Berwarna Merah)') }}</label>
-              <input type="file" class="form-control @error('avatar') is-invalid @enderror" name="avatar" id="avatar" required />
-              @error('avatar')
+              <label class="form-label" for="school_certificate">{{ __('Ijazah (Max: 2 MB)') }}</label>
+              <input type="file" class="form-control @error('school_certificate') is-invalid @enderror" name="school_certificate" id="school_certificate" required />
+              @error('school_certificate')
                 <div class="text-danger mt-2">
                   {{ $message }}
                 </div>
@@ -309,7 +318,7 @@
 
             <span class="fw-bold">Catatan :</span><br>
             <small class="text-secondary">
-              {{ __('Sekolah gratis (tanpa dipungut biaya) pendaftaran harap dilampirkan fotocopy Akte Kelahiran/KTP/KK') }}
+              {{ __('Sekolah gratis (tanpa dipungut biaya) pendaftaran harap dilampirkan fotocopy Akte Kelahiran/KTP/KK/Ijazah') }}
             </small>
           </div>
         </div>

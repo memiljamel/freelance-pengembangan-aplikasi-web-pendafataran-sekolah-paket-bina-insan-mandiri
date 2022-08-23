@@ -59,6 +59,7 @@ class RegisterController extends Controller
         $personal->birth_certificate = Storage::putFile('images', $request->file('birth_certificate'));
         $personal->identity_card = Storage::putFile('images', $request->file('identity_card'));
         $personal->family_card = Storage::putFile('images', $request->file('family_card'));
+        $personal->school_certificate = Storage::putFile('images', $request->file('school_certificate'));
         $user->personal()->save($personal);
 
         return redirect()->route('login.index')

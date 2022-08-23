@@ -361,6 +361,19 @@
                   </div>
                 @enderror
               </div>
+              <div class="form-group">
+                <label class="form-label" for="school_certificate">{{ __('Ijazah (Max: 2 MB)') }}</label>
+                <input type="file" class="form-control @error('school_certificate') is-invalid @enderror" name="school_certificate" id="school_certificate" required />
+                @error('school_certificate')
+                  <div class="text-danger mt-2">
+                    {{ $message }}
+                  </div>
+                @else
+                  <div class="text-dark mt-2">
+                    {{ __('Harap dikosongkan jika tidak terdapat perubahan') }}
+                  </div>
+                @enderror
+              </div>
 
               <div class="form-group">
                 <button type="submit" class="btn btn-primary">Simpan</button>

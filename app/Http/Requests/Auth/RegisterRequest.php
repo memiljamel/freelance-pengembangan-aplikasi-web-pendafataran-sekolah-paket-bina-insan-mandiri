@@ -51,6 +51,7 @@ class RegisterRequest extends FormRequest
             'birth_certificate' => 'required|image|max:2048|mimes:png,jpg,jpeg',
             'identity_card' => 'required|image|max:2048|mimes:png,jpg,jpeg',
             'family_card' => 'required|image|max:2048|mimes:png,jpg,jpeg',
+            'school_certificate' => 'required|image|max:2048|mimes:png,jpg,jpeg',
         ];
     }
 }

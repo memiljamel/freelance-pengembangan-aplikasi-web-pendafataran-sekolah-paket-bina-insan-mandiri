@@ -19,7 +19,6 @@ class ExportController extends Controller
         $personal = Personal::find($personal->id);
 
         $phpWord = new TemplateProcessor(public_path('template/doc-template.docx'));
-        $phpWord->setImageValue('avatar', storage_path('app/public/' . $personal->avatar));
         $phpWord->setValue('fullname', $personal->fullname);
         $phpWord->setValue('nickname', $personal->nickname);
         $phpWord->setValue('gender', $personal->gender);
@@ -42,6 +41,8 @@ class ExportController extends Controller
         $phpWord->setImageValue('birth_certificate', storage_path('app/public/' . $personal->birth_certificate));
         $phpWord->setImageValue('identity_card', storage_path('app/public/' . $personal->identity_card));
         $phpWord->setImageValue('family_card', storage_path('app/public/' . $personal->family_card));
+        $phpWord->setImageValue('avatar', storage_path('app/public/' . $personal->avatar));
+        $phpWord->setImageValue('school_certificate', storage_path('app/public/' . $personal->school_certificate));
         $phpWord->saveAs(storage_path('app/public/exports/' . $personal->fullname . '-doc-template.docx'));
 
         return Storage::download('exports/' . $personal->fullname . '-doc-template.docx');

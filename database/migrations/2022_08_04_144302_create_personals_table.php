@@ -41,6 +41,7 @@ class CreatePersonalsTable extends Migration
             $table->text('birth_certificate');
             $table->text('identity_card');
             $table->text('family_card');
+            $table->text('school_certificate');
             $table->enum('status', ['Diproses', 'Diterima', 'Ditolak'])->default('Diproses');
             $table->longText('notes')->nullable();
             $table->timestamps();
